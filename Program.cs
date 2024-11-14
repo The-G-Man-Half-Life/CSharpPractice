@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Microsoft.VisualBasic;
 using PracticeC_.Data;
+using PracticeC_.Models;
 using PracticeC_.Repositories.Interfaces;
 using PracticeC_.Services;
 using Sprache;
@@ -28,8 +29,8 @@ ValidateEnvVariables("DB_HOST","DB_PORT","DB_DATABASE","DB_UID","DB_PASSWORD");
 
 var host = Environment.GetEnvironmentVariable("DB_HOST");
 var port = Environment.GetEnvironmentVariable("DB_PORT");
-var uid = Environment.GetEnvironmentVariable("DB_DATABASE");
-var database = Environment.GetEnvironmentVariable("DB_UID");
+var database = Environment.GetEnvironmentVariable("DB_DATABASE");
+var uid = Environment.GetEnvironmentVariable("DB_UID");
 var password = Environment.GetEnvironmentVariable("DB_PASSWORD");
 
 var connectionString = $"server={host};port={port};database={database};uid={uid};password={password}";
@@ -66,7 +67,8 @@ options.UseMySql(connectionString, ServerVersion.Parse("8.0.20-mysql")));
 //Registrar repositorios y servicios
 builder.Services.AddScoped<IRoom_typeRepository, Room_typeServices>();
 builder.Services.AddScoped<Room_typeServices>();
-
+builder.Services.AddScoped<IGuestRepository, GuestServices>();
+builder.Services.AddScoped<GuestServices>();
 // Configurar controladores y Swagger
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

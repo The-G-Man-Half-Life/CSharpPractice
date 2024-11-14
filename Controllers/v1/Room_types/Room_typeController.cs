@@ -6,7 +6,7 @@ using PracticeC_.Services;
 namespace PracticeC_.Controllers.V1.Room_types;
 [ApiController]
 [Route("api/V1/Room_types/[controller]")]
-[ApiExplorerSettings(GroupName ="V1")]
+[ApiExplorerSettings(GroupName ="v1")]
 [Tags("Room_types")]
 public class Room_typeController : ControllerBase
 {
