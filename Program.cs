@@ -71,6 +71,10 @@ builder.Services.AddScoped<IGuestRepository, GuestServices>();
 builder.Services.AddScoped<GuestServices>();
 builder.Services.AddScoped<IRoomRepository, RoomServices>();
 builder.Services.AddScoped<RoomServices>();
+builder.Services.AddScoped<IEmployeeRepository, EmployeeServices>();
+builder.Services.AddScoped<EmployeeServices>();
+builder.Services.AddScoped<IBookingRepository, BookingServices>();
+builder.Services.AddScoped<BookingServices>();
 // Configurar controladores y Swagger
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
