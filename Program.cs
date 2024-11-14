@@ -69,6 +69,8 @@ builder.Services.AddScoped<IRoom_typeRepository, Room_typeServices>();
 builder.Services.AddScoped<Room_typeServices>();
 builder.Services.AddScoped<IGuestRepository, GuestServices>();
 builder.Services.AddScoped<GuestServices>();
+builder.Services.AddScoped<IRoomRepository, RoomServices>();
+builder.Services.AddScoped<RoomServices>();
 // Configurar controladores y Swagger
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
